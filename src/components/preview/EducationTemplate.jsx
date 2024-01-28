@@ -18,7 +18,9 @@ function EducationTemplate({ education }) {
         </h4>
       </div>
       <div>
-        <h2>CGPA - {education.grade}</h2>
+        <h3>
+          <li>CGPA - {education.grade}</li>
+        </h3>
       </div>
     </div>
   );

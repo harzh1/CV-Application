@@ -13,5 +13,5 @@ export const PlaceholderValues = {
   description: "Description",
   start: "Start",
   end: "End",
-  link: "Link",
+  link: "https://www.example.com",
 };

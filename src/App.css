@@ -1,31 +1,21 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
 
-.logo {
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* .logo-img {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+} */
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
@@ -41,10 +31,73 @@
   color: #888;
 }
 
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 2em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  background-color: #ecf0f1;
+}
+
 .main-app {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  height: 100vh;
+  height: 91.5vh;
+}
+
+.main-app-leftSide {
+  height: 100%;
+  width: 50%;
+  overflow-y: scroll; /* Add scroll */
+  scroll-behavior: smooth; /* Smooth scroll */
+  scroll-snap-type: y mandatory; /* Snap scroll */
+}
+
+.main-app-leftSide::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+.main-app-leftSide {
+  -ms-overflow-style: none; /* Hide scrollbar */
+  scrollbar-width: none; /* Hide scrollbar */
+}
+
+.main-app-rightSide {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  background-color: #2980b9;
+}
+
+.main-app-rightSide-resume {
+  background-color: white;
+  width: 32vw;
+  height: 45.12vw;
+  border-radius: 5px;
+  transition: 0.1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5vw;
+  box-sizing: border-box;
+  gap: 1vw;
+  overflow-y: scroll; /* Add scroll */
+  scroll-behavior: smooth; /* Smooth scroll */
+  scroll-snap-type: y mandatory; /* Snap scroll */
+}
+
+.main-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6.5vh;
+  background-color: #ecf0f1;
 }

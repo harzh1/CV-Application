@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Resume from "./components/preview/Resume";
 import Section from "./components/Section";
+import Footer from "./components/Footer";
 
 function App() {
   const [firstName, setFirstName] = useState("");
@@ -10,6 +11,11 @@ function App() {
   const [experiences, setExperiences] = useState([]);
   const [education, setEducation] = useState([]);
   const [projects, setProjects] = useState([]);
+  const [skills, setSkills] = useState([]);
+  const [achievements, setAchievements] = useState([]);
+  const [PORs, setPORs] = useState([]);
+  const [extracurriculars, setExtracurriculars] = useState([]);
+
   const [additionalInfo, setAdditionalInfo] = useState({
     email: "",
     address: "",
@@ -143,9 +149,128 @@ function App() {
     setProjects(updatedProjects);
   }
 
+  function addSkillResume(id) {
+    setSkills([
+      ...skills,
+      {
+        id: id,
+        skillName: "",
+        description: "",
+      },
+    ]);
+  }
+
+  function deleteSkillResume(id) {
+    setSkills(skills.filter((skill) => skill.id != id));
+  }
+
+  function handleSkillChange(newSkill) {
+    const updatedSkills = skills.map((item) => {
+      if (item.id === newSkill.id) {
+        return {
+          ...item,
+          skillName: newSkill.skillName,
+          description: newSkill.description,
+        };
+      }
+      return item;
+    });
+
+    setSkills(updatedSkills);
+  }
+
+  function addAchievementResume(id) {
+    setAchievements([
+      ...achievements,
+      {
+        id: id,
+        description: "",
+      },
+    ]);
+  }
+
+  function deleteAchievementResume(id) {
+    setAchievements(achievements.filter((achievement) => achievement.id != id));
+  }
+
+  function handleAchievementChange(newAchievement) {
+    const updatedAchievements = achievements.map((item) => {
+      if (item.id === newAchievement.id) {
+        return {
+          ...item,
+          description: newAchievement.description,
+        };
+      }
+      return item;
+    });
+
+    setAchievements(updatedAchievements);
+  }
+
+  function addPORResume(id) {
+    setPORs([
+      ...PORs,
+      {
+        id: id,
+        description: "",
+      },
+    ]);
+  }
+
+  function deletePORResume(id) {
+    setPORs(PORs.filter((POR) => POR.id != id));
+  }
+
+  function handlePORChange(newPOR) {
+    const updatedPORs = PORs.map((item) => {
+      if (item.id === newPOR.id) {
+        return {
+          ...item,
+          description: newPOR.description,
+        };
+      }
+      return item;
+    });
+
+    setPORs(updatedPORs);
+  }
+
+  function addExtracurricularResume(id) {
+    setExtracurriculars([
+      ...extracurriculars,
+      {
+        id: id,
+        extracurricularName: "",
+      },
+    ]);
+  }
+
+  function deleteExtracurricularResume(id) {
+    setExtracurriculars(
+      extracurriculars.filter((extracurricular) => extracurricular.id != id)
+    );
+  }
+
+  function handleExtracurricularChange(newExtracurricular) {
+    const updatedExtracurriculars = extracurriculars.map((item) => {
+      if (item.id === newExtracurricular.id) {
+        return {
+          ...item,
+          extracurricularName: newExtracurricular.extracurricularName,
+        };
+      }
+      return item;
+    });
+
+    setExtracurriculars(updatedExtracurriculars);
+  }
+
   return (
     <>
-      <Header />
+      <div className="main-app-header">
+        <Header />
+      </div>
+
       <div className="main-app">
         <div className="main-app-leftSide">
           <Section title="Your Details" handleName={handleNameUpdate} />
@@ -167,17 +292,50 @@ function App() {
             handleDelete={deleteProjectResume}
             handleChange={handleProjectChange}
           />
-        </div>
-        <div className="main-app-rightSide">
-          <Resume
-            firstName={firstName}
-            lastName={lastName}
-            additionalInfo={additionalInfo}
-            experiences={experiences}
-            educations={education}
-            projects={projects}
+          <Section
+            title="Your Skills"
+            handleAdd={addSkillResume}
+            handleDelete={deleteSkillResume}
+            handleChange={handleSkillChange}
+          />
+          <Section
+            title="Your Achievements"
+            handleAdd={addAchievementResume}
+            handleDelete={deleteAchievementResume}
+            handleChange={handleAchievementChange}
+          />
+          <Section
+            title="Position of Responsibilities"
+            handleAdd={addPORResume}
+            handleDelete={deletePORResume}
+            handleChange={handlePORChange}
+          />
+          <Section
+            title="Extracurricular Activities"
+            handleAdd={addExtracurricularResume}
+            handleDelete={deleteExtracurricularResume}
+            handleChange={handleExtracurricularChange}
           />
         </div>
+        <div className="main-app-rightSide">
+          <div className="main-app-rightSide-resume">
+            <Resume
+              firstName={firstName}
+              lastName={lastName}
+              additionalInfo={additionalInfo}
+              experiences={experiences}
+              educations={education}
+              projects={projects}
+              skills={skills}
+              achievements={achievements}
+              PORs={PORs}
+              extracurriculars={extracurriculars}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="main-app-footer">
+        <Footer />
       </div>
     </>
   );

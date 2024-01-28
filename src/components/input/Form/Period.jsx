@@ -8,7 +8,7 @@ function Period({ handleChange }) {
         onChange={handleChange}
         required
       />
-      <label htmlFor="period">Period</label>
+      <label htmlFor="period">-</label>
 
       <input
         type="text"

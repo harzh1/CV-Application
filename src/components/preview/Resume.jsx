@@ -3,6 +3,10 @@ import { Fragment } from "react";
 import EducationTemplate from "./EducationTemplate";
 import ExperienceTemplate from "./ExperienceTemplate";
 import ProjectTemplate from "./ProjectTemplate";
+import SkillTemplate from "./SkillTemplate";
+import AchievementTemplate from "./AchievementTemplate";
+import PORTemplate from "./PORTemplate";
+import ExtracurricularTemplate from "./ExtracurricularTemplate";
 
 function Resume({
   firstName,
@@ -11,6 +15,10 @@ function Resume({
   experiences,
   educations,
   projects,
+  skills,
+  achievements,
+  PORs,
+  extracurriculars,
 }) {
   return (
     <div className="cv-container">
@@ -58,6 +66,61 @@ function Resume({
               <div className="projects">
                 {projects.map((item) => (
                   <ProjectTemplate key={item.id} project={item} />
+                ))}
+              </div>
+            </Fragment>
+          )}
+        </div>
+
+        <div className="resume-section skill">
+          {skills.length > 0 && (
+            <Fragment>
+              <h2>SKILLS</h2>
+              <div className="skills">
+                {skills.map((item) => (
+                  <SkillTemplate key={item.id} skill={item} />
+                ))}
+              </div>
+            </Fragment>
+          )}
+        </div>
+
+        <div className="resume-section achievement">
+          {achievements.length > 0 && (
+            <Fragment>
+              <h2>ACHIEVEMENTS</h2>
+              <div className="achievements">
+                {achievements.map((item) => (
+                  <AchievementTemplate key={item.id} achievement={item} />
+                ))}
+              </div>
+            </Fragment>
+          )}
+        </div>
+
+        <div className="resume-section POR">
+          {PORs.length > 0 && (
+            <Fragment>
+              <h2>POSITION OF RESPONSIBILITY</h2>
+              <div className="PORs">
+                {PORs.map((item) => (
+                  <PORTemplate key={item.id} POR={item} />
+                ))}
+              </div>
+            </Fragment>
+          )}
+        </div>
+
+        <div className="resume-section extracurricular">
+          {extracurriculars.length > 0 && (
+            <Fragment>
+              <h2>EXTRACURRICULARS</h2>
+              <div className="extracurriculars">
+                {extracurriculars.map((item) => (
+                  <ExtracurricularTemplate
+                    key={item.id}
+                    extracurricular={item}
+                  />
                 ))}
               </div>
             </Fragment>
