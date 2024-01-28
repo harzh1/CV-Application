@@ -6,18 +6,18 @@ import DeleteButton from "./DeleteButton";
 function Education({
   addEducationResume,
   deleteEducationResume,
-  updateEducationResume,
+  changeEducationResume,
 }) {
   const [educationList, setEducationList] = useState([]);
 
   function handleAddEducation() {
     const idKey = crypto.randomUUID();
     setEducationList([...educationList, idKey]);
-    // addEducationResume(idKey);
+    addEducationResume(idKey);
   }
-
   function handleDeleteEducation(id) {
     setEducationList(educationList.filter((idItem) => idItem != id));
+    deleteEducationResume(id);
   }
 
   return (
@@ -28,7 +28,7 @@ function Education({
             key={item}
             idKey={item}
             handleDelete={handleDeleteEducation}
-            handleUpdate={updateEducationResume}
+            handleChangeResume={changeEducationResume}
           />
         );
       })}

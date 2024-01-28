@@ -16,3 +16,5 @@ function Description({ handleChange }) {
     </div>
   );
 }
+
+export default Description;

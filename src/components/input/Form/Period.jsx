@@ -3,7 +3,7 @@ function Period({ handleChange }) {
     <div className="input-field period">
       <input
         type="text"
-        name="period start"
+        name="start"
         placeholder="Start"
         onChange={handleChange}
         required
@@ -12,7 +12,7 @@ function Period({ handleChange }) {
 
       <input
         type="text"
-        name="period end"
+        name="end"
         placeholder="End"
         onChange={handleChange}
         required

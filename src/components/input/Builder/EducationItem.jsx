@@ -4,41 +4,30 @@ import Period from "../Form/Period";
 import { PlaceholderValues } from "../Form/PlaceholderValues";
 import DeleteButton from "./DeleteButton";
 
-function EducationItem({ idKey, handleDelete, handleUpdateResume }) {
+function EducationItem({ idKey, handleDelete, handleChangeResume }) {
   const [education, setEducation] = useState({
     id: idKey,
     schoolName: "",
     degree: "",
     start: "",
     end: "",
+    grade: "",
     location: "",
   });
 
   function handleEducationChange(event) {
-    if (event.target.name == "school") {
-      setEducation({ ...education, schoolName: event.target.value });
-    }
-    if (event.target.name == "location") {
-      setEducation({ ...education, location: event.target.value });
-    }
-    if (event.target.name == "degree") {
-      setEducation({ ...education, degree: event.target.value });
-    }
-    if (event.target.name == "start") {
-      setEducation({ ...education, start: event.target.value });
-    }
-    if ((event.target.name = "end")) {
-      setEducation({ ...education, end: event.target.value });
-    }
+    const newEducation = {
+      ...education,
+      [event.target.name]: event.target.value,
+    };
+    setEducation(newEducation);
+    handleChangeResume(newEducation);
   }
 
   return (
     <div className="education">
-      <div>
-        <h1>Education</h1>
-      </div>
       <InputField
-        name="school"
+        name="schoolName"
         label="School/University"
         handleChange={handleEducationChange}
       />
