@@ -9,7 +9,7 @@ function ProjectItem({ idKey, handleDelete, handleChangeResume }) {
     id: idKey,
     projectName: "",
     description: "",
-    link: "",
+    github: "",
   });
 
   function handleProjectChange(event) {
@@ -29,7 +29,7 @@ function ProjectItem({ idKey, handleDelete, handleChangeResume }) {
         handleChange={handleProjectChange}
       />
       <Description handleChange={handleProjectChange} />
-      <Link handleChange={handleProjectChange} />
+      <Link name="github" label="Github" handleChange={handleProjectChange} />
       <DeleteButton label="Delete" handleClick={() => handleDelete(idKey)} />
     </div>
   );

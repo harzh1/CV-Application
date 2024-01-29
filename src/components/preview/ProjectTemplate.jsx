@@ -13,7 +13,7 @@ function ProjectTemplate({ project }) {
       <div>
         <p>
           Link:{" "}
-          <a href={project.link} target="_blank">
+          <a href={project.github} target="_blank">
             {project.projectName}
           </a>
         </p>

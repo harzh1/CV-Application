@@ -20,6 +20,8 @@ function App() {
     email: "",
     address: "",
     phone: "",
+    linkedIn: "",
+    github: "",
   });
 
   function handleNameUpdate(event) {
@@ -38,6 +40,13 @@ function App() {
         break;
       case "address":
         setAdditionalInfo({ ...additionalInfo, address: event.target.value });
+        break;
+      case "linkedIn":
+        setAdditionalInfo({ ...additionalInfo, linkedIn: event.target.value });
+        break;
+      case "github":
+        setAdditionalInfo({ ...additionalInfo, github: event.target.value });
+        break;
     }
   }
 
@@ -124,7 +133,7 @@ function App() {
         id: id,
         projectName: "",
         description: "",
-        link: "",
+        github: "",
       },
     ]);
   }
@@ -140,7 +149,7 @@ function App() {
           ...item,
           projectName: newProject.projectName,
           description: newProject.description,
-          link: newProject.link,
+          github: newProject.github,
         };
       }
       return item;
@@ -316,6 +325,7 @@ function App() {
             handleDelete={deleteExtracurricularResume}
             handleChange={handleExtracurricularChange}
           />
+          <div className="bottom-input-padding"></div>
         </div>
         <div className="main-app-rightSide">
           <div className="main-app-rightSide-resume">

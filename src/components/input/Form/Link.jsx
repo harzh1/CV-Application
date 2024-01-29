@@ -1,14 +1,14 @@
 import { PlaceholderValues } from "../Form/PlaceholderValues";
 
-function Link({ handleChange }) {
+function Link({ name, label, handleChange }) {
   return (
     <div className="form-group">
-      <label htmlFor={"link"}>Link</label>
+      <label htmlFor={name}>{label ? label : "Github"}</label>
       <input
         type="url"
         className="form-control"
-        id="link"
-        name="link"
+        id={name}
+        name={name}
         placeholder={PlaceholderValues["link"]}
         onChange={handleChange}
       />

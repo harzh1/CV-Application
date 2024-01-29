@@ -1,3 +1,5 @@
+import "/src/resumeStyles.css";
+
 import React from "react";
 import { Fragment } from "react";
 import EducationTemplate from "./EducationTemplate";
@@ -28,15 +30,30 @@ function Resume({
         </h1>
         <p>{additionalInfo.address}</p>
         <div>
-          <p>{additionalInfo.phone}</p>
-          <p>{additionalInfo.email}</p>
+          <p>
+            {additionalInfo.phone}{" "}
+            {additionalInfo.phone && additionalInfo.email ? " | " : ""}{" "}
+            {additionalInfo.email}{" "}
+            {additionalInfo.email && additionalInfo.linkedIn ? " | " : ""}{" "}
+            &nbsp;
+            <a href={additionalInfo.linkedIn}>
+              {additionalInfo.linkedIn ? "LinkedIn" : ""}{" "}
+              {additionalInfo.linkedIn && additionalInfo.github ? " | " : ""}{" "}
+              &nbsp;
+            </a>
+            <a href={additionalInfo.github}>
+              {additionalInfo.github ? "Github" : ""}
+            </a>
+          </p>
         </div>
       </div>
+
       <div className="cv-body">
         <div className="resume-section education">
           {educations.length > 0 && (
             <Fragment>
-              <h2>EDUCATION</h2>
+              <h2 className="resume-heading">EDUCATION</h2>
+              <hr />
               <div className="educations">
                 {educations.map((item) => (
                   <EducationTemplate key={item.id} education={item} />
@@ -45,11 +62,13 @@ function Resume({
             </Fragment>
           )}
         </div>
+        <div className="divider"></div>
 
         <div className="resume-section experience">
           {experiences.length > 0 && (
             <Fragment>
-              <h2>WORK EXPERIENCES</h2>
+              <h2 className="resume-heading">WORK EXPERIENCES</h2>
+              <hr />
               <div className="experiences">
                 {experiences.map((item) => (
                   <ExperienceTemplate key={item.id} experience={item} />
@@ -58,11 +77,13 @@ function Resume({
             </Fragment>
           )}
         </div>
+        <div className="divider"></div>
 
         <div className="resume-section project">
           {projects.length > 0 && (
             <Fragment>
-              <h2>PROJECTS</h2>
+              <h2 className="resume-heading">PROJECTS</h2>
+              <hr />
               <div className="projects">
                 {projects.map((item) => (
                   <ProjectTemplate key={item.id} project={item} />
@@ -71,11 +92,13 @@ function Resume({
             </Fragment>
           )}
         </div>
+        <div className="divider"></div>
 
         <div className="resume-section skill">
           {skills.length > 0 && (
             <Fragment>
-              <h2>SKILLS</h2>
+              <h2 className="resume-heading">SKILLS</h2>
+              <hr />
               <div className="skills">
                 {skills.map((item) => (
                   <SkillTemplate key={item.id} skill={item} />
@@ -84,11 +107,13 @@ function Resume({
             </Fragment>
           )}
         </div>
+        <div className="divider"></div>
 
         <div className="resume-section achievement">
           {achievements.length > 0 && (
             <Fragment>
-              <h2>ACHIEVEMENTS</h2>
+              <h2 className="resume-heading">ACHIEVEMENTS</h2>
+              <hr />
               <div className="achievements">
                 {achievements.map((item) => (
                   <AchievementTemplate key={item.id} achievement={item} />
@@ -97,11 +122,13 @@ function Resume({
             </Fragment>
           )}
         </div>
+        <div className="divider"></div>
 
         <div className="resume-section POR">
           {PORs.length > 0 && (
             <Fragment>
-              <h2>POSITION OF RESPONSIBILITY</h2>
+              <h2 className="resume-heading">POSITION OF RESPONSIBILITY</h2>
+              <hr />
               <div className="PORs">
                 {PORs.map((item) => (
                   <PORTemplate key={item.id} POR={item} />
@@ -110,11 +137,13 @@ function Resume({
             </Fragment>
           )}
         </div>
+        <div className="divider"></div>
 
         <div className="resume-section extracurricular">
           {extracurriculars.length > 0 && (
             <Fragment>
-              <h2>EXTRACURRICULARS</h2>
+              <h2 className="resume-heading">EXTRACURRICULARS</h2>
+              <hr />
               <div className="extracurriculars">
                 {extracurriculars.map((item) => (
                   <ExtracurricularTemplate

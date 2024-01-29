@@ -2,7 +2,7 @@ export const PlaceholderValues = {
   firstName: "First Name",
   lastName: "Last name",
   emailAddress: "Email Address",
-  address: "Enter Address",
+  address: "Address",
   phone: "Phone",
   position: "Job Position",
   companyName: "Company Name",

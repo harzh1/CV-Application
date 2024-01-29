@@ -30,7 +30,7 @@ function Project({
           handleChangeResume={changeProjectResume}
         />
       ))}
-      <AddButton label="Add Project" handleClick={handleAddProject} />
+      <AddButton label="Add Project" handleClick={handleAddProject}></AddButton>
     </Fragment>
   );
 }

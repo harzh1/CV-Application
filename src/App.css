@@ -1,13 +1,152 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  width: 100vw;
+  height: fit-content;
+  font-family: Calibri;
+  overflow-x: hidden;
+  display: flex;
 }
 
-#root {
-  max-width: 100%;
+:root {
+  --back-clr: #111827;
+  --txt-clr: white;
+  --btn-clr: #6dabe4;
+}
+/* h2 {
+  font-size: 1.5em;
+  font-weight: 600;
   margin: 0;
-  padding: 0;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+} */
+
+#root {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  background-color: white;
+  color: #002e5d;
+  border: none;
+  outline: #002e5d solid;
+  outline-width: thin;
+  font-size: 0.8vw;
+  width: 100%;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.input-field,
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+textarea {
+  word-wrap: break-word;
+  overflow: auto;
+  height: auto; /* Adjust height according to content */
+}
+
+label {
+  font-size: 0.8vw;
+  color: rgba(156, 163, 175, 1);
+}
+
+input:focus,
+textarea:focus {
+  outline: solid var(--btn-clr);
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    display: block;
+    overflow-x: hidden;
+  }
+  #root {
+    display: block;
+  }
+
+  .form-container {
+    height: auto;
+    margin-bottom: 2rem;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+    margin-bottom: 5%;
+  }
+  .details-container {
+    margin-bottom: 0;
+  }
+  label,
+  textarea,
+  input {
+    font-size: 0.8rem;
+  }
+
+  form > ul > li,
+  form {
+    gap: 1rem;
+  }
+}
+
+textarea {
+  word-wrap: break-word;
+  overflow: auto;
+}
+
+label {
+  font-size: 0.8vw;
+  color: rgba(156, 163, 175, 1);
+}
+
+input:focus,
+textarea:focus {
+  outline: solid #afcbff;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    display: block;
+    overflow-x: hidden;
+  }
+  #root {
+    display: block;
+  }
+
+  .form-container {
+    height: auto;
+    margin-bottom: 2rem;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+    margin-bottom: 5%;
+  }
+  .details-container {
+    margin-bottom: 0;
+  }
+  label,
+  textarea,
+  input {
+    font-size: 0.8rem;
+  }
+
+  form > ul > li,
+  form {
+    gap: 1rem;
+  }
 }
 
 /* .logo-img {
@@ -40,7 +179,8 @@ body {
   height: 2em;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
-  background-color: #ecf0f1;
+  background-color: white;
+  /* #d1d5db */
 }
 
 .main-app {
@@ -49,23 +189,27 @@ body {
   align-items: center;
   justify-content: space-evenly;
   height: 91.5vh;
+  background-color: #ecf0f1;
 }
 
 .main-app-leftSide {
+  flex: 1;
+  display: flex;
+  gap: 2%;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #002e5d;
+  background-color: #ecf0f1;
   height: 100%;
-  width: 50%;
-  overflow-y: scroll; /* Add scroll */
-  scroll-behavior: smooth; /* Smooth scroll */
-  scroll-snap-type: y mandatory; /* Snap scroll */
+  overflow-y: auto;
+  padding-left: 3em;
+  padding-right: 4.5em;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .main-app-leftSide::-webkit-scrollbar {
-  display: none; /* Hide scrollbar */
-}
-
-.main-app-leftSide {
-  -ms-overflow-style: none; /* Hide scrollbar */
-  scrollbar-width: none; /* Hide scrollbar */
+  display: none;
 }
 
 .main-app-rightSide {
@@ -75,23 +219,41 @@ body {
   justify-content: center;
 
   align-items: center;
-  background-color: #2980b9;
+  background-color: #ecf0f1;
 }
 
-.main-app-rightSide-resume {
-  background-color: white;
-  width: 32vw;
-  height: 45.12vw;
-  border-radius: 5px;
-  transition: 0.1s ease-in-out;
+.fullName {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.firstName-input,
+.lastName-input {
+  width: 48%;
+}
+
+/* .fullName .text-field {
+  margin-right: 100px;
+} */
+
+.section {
   display: flex;
   flex-direction: column;
-  padding: 1.5vw;
-  box-sizing: border-box;
-  gap: 1vw;
-  overflow-y: scroll; /* Add scroll */
-  scroll-behavior: smooth; /* Smooth scroll */
-  scroll-snap-type: y mandatory; /* Snap scroll */
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+.section-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.bottom-input-padding {
+  padding-bottom: 2em;
 }
 
 .main-footer {
