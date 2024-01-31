@@ -1,9 +1,7 @@
 function ExtracurricularTemplate({ extracurricular }) {
   return (
     <div className="extracurricular-item">
-      <li>
-        <p>{extracurricular.extracurricularName}</p>
-      </li>
+      <li>{extracurricular.extracurricularName}</li>
     </div>
   );
 }

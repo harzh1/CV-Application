@@ -4,15 +4,15 @@ import Link from "../Form/Link";
 function PersonalDetails({ handleChange }) {
   return (
     <div className="personalDetails form">
-      <div className="fullName">
-        <div className="firstName-input">
+      <div className="half-input-div">
+        <div className="half-input">
           <InputField
             name="firstName"
             label="First Name"
             handleChange={handleChange}
           />
         </div>
-        <div className="lastName-input">
+        <div className="half-input">
           <InputField
             name="lastName"
             label="Last Name"
@@ -20,17 +20,24 @@ function PersonalDetails({ handleChange }) {
           />
         </div>
       </div>
-      <InputField
-        name="emailAddress"
-        label="Email Address"
-        handleChange={handleChange}
-      />
+      <div className="half-input-div">
+        <div className="half-input">
+          <InputField
+            name="emailAddress"
+            label="Email Address"
+            handleChange={handleChange}
+          />
+        </div>
+        <div className="half-input">
+          <InputField
+            name="phone"
+            label="Phone Number"
+            handleChange={handleChange}
+          />
+        </div>
+      </div>
       <InputField name="address" label="Address" handleChange={handleChange} />
-      <InputField
-        name="phone"
-        label="Phone Number"
-        handleChange={handleChange}
-      />
+
       <Link name="linkedIn" label="Linkedin" handleChange={handleChange} />
       <Link name="github" label="Github" handleChange={handleChange} />
     </div>

@@ -1,5 +1,11 @@
+import React from "react";
 import logo from "/src/assets/logo.png";
+
 function Header() {
+  function generateCV() {
+    alert("CV generater is not yet implemented");
+  }
+
   return (
     <>
       <header className="main-header">
@@ -9,7 +15,7 @@ function Header() {
         </div>
 
         <div className="header-btns">
-          <button>Generate CV</button>
+          <button onClick={generateCV}>Generate CV </button>
         </div>
       </header>
     </>

@@ -1,8 +1,10 @@
 function AddButton({ label, handleClick }) {
   return (
-    <button className="add-button" onClick={handleClick}>
-      {label}
-    </button>
+    <div className="btn-div">
+      <button className="add-button" onClick={handleClick}>
+        {label}
+      </button>
+    </div>
   );
 }
 

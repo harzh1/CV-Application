@@ -1,6 +1,14 @@
-:root {
-  --back-clr: rgba(17, 24, 39, 1);
-  --txt-clr: white;
+@font-face {
+  font-family: "CMU-Serif-Bold";
+  src: url("/src/assets/CMU-Serif-Bold.ttf.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CMU-Serif-Roman";
+  src: url("/src/assets/CMU-Serif-Roman.ttf.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 .cv-container {
@@ -8,13 +16,14 @@
   position: sticky;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  background-color: var(--txt-clr);
+  background-color: white;
+  color: #000;
   width: 32vw;
   height: 45.12vw;
   overflow-y: auto;
   font-size: 0.5vw;
   scroll-behavior: smooth;
+  font-family: "CMU-Serif-Bold", serif;
 }
 
 .cv-container h2,
@@ -27,9 +36,22 @@
   /* Adjust as needed */
 }
 
+.cv-container h3,
+.cv-container h4,
+.cv-container p {
+  font-family: "CMU-Serif-Roman", serif;
+}
+
+.cv-container h1 {
+  font-family: "CMU-Serif-Bold", serif;
+}
+
+.bold {
+  font-family: "CMU-Serif-Bold", serif !important;
+}
+
 .p-left {
   width: 80%;
-  font-weight: 1000;
 }
 
 .cv-container hr {
@@ -63,6 +85,7 @@
   flex-direction: row;
   align-content: baseline;
   justify-content: space-between;
+  font-family: "CMU-Serif-Bold", serif !important;
 }
 
 .education-item-degree {
@@ -70,7 +93,11 @@
   flex-direction: row;
   align-content: baseline;
   justify-content: space-between;
-  font-weight: 100;
+  font-family: "CMU-Serif-Roman", serif;
+}
+
+.resume-heading {
+  font-family: "CMU-Serif-Roman", serif;
 }
 
 .resume-period {

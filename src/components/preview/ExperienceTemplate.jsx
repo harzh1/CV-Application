@@ -8,13 +8,13 @@ function ExperienceTemplate({ experience }) {
           </h2>
         </div>
         <div>
-          <div className="experience-item-description">
+          <div>
             <p>{experience.location ? experience.location : "Location"}</p>
           </div>
         </div>
       </div>
       <div className="education-item-degree">
-        <p className="p-left">
+        <p className="experience-item-description p-left">
           {experience.description
             ? experience.description
             : "Job overview description "}
@@ -25,6 +25,7 @@ function ExperienceTemplate({ experience }) {
             : "Start - End"}
         </h4>
       </div>
+      <div style={{ height: "5px" }}></div>
     </div>
   );
 }

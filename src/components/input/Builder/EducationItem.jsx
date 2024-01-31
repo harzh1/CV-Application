@@ -31,22 +31,34 @@ function EducationItem({ idKey, handleDelete, handleChangeResume }) {
         label="School/University"
         handleChange={handleEducationChange}
       />
-      <InputField
-        name="location"
-        label="Location"
-        handleChange={handleEducationChange}
-      />
-      <InputField
-        name="degree"
-        label="Degree"
-        handleChange={handleEducationChange}
-      />
-      <InputField
-        name="grade"
-        label="Grade"
-        handleChange={handleEducationChange}
-      />
-      <Period handleChange={handleEducationChange} />
+      <div className="half-input-div">
+        <div className="half-input">
+          <InputField
+            name="location"
+            label="Location"
+            handleChange={handleEducationChange}
+          />
+        </div>
+        <div className="half-input">
+          <InputField
+            name="degree"
+            label="Degree"
+            handleChange={handleEducationChange}
+          />
+        </div>
+      </div>
+      <div className="half-input-div">
+        <div className="half-input">
+          <InputField
+            name="grade"
+            label="Grade"
+            handleChange={handleEducationChange}
+          />
+        </div>
+        <div className="half-input">
+          <Period handleChange={handleEducationChange} />
+        </div>
+      </div>
       <DeleteButton label="Delete" handleClick={() => handleDelete(idKey)} />
     </div>
   );

@@ -23,7 +23,7 @@ function Resume({
   extracurriculars,
 }) {
   return (
-    <div className="cv-container">
+    <div className="cv-container" id="cv">
       <div className="cv-header">
         <h1>
           {firstName} {lastName}
@@ -152,6 +152,7 @@ function Resume({
                   />
                 ))}
               </div>
+              <div style={{ height: "30px" }}></div>
             </Fragment>
           )}
         </div>

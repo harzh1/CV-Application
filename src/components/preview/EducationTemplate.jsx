@@ -22,6 +22,7 @@ function EducationTemplate({ education }) {
           <li>CGPA - {education.grade}</li>
         </h3>
       </div>
+      <div style={{ height: "5px" }}></div>
     </div>
   );
 }

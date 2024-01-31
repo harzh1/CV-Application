@@ -14,4 +14,7 @@ export const PlaceholderValues = {
   start: "Start",
   end: "End",
   link: "https://www.example.com",
+  projectName: "Project Name",
+  skillName: "Skill Name",
+  extracurricularName: "Activities Name",
 };
