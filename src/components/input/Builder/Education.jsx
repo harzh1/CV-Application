@@ -16,7 +16,7 @@ function Education({
     addEducationResume(idKey);
   }
   function handleDeleteEducation(id) {
-    setEducationList(educationList.filter((idItem) => idItem != id));
+    // setEducationList(educationList.filter((idItem) => idItem != id));
     deleteEducationResume(id);
   }
 
